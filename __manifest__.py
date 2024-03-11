@@ -1,6 +1,6 @@
 {
 'name': 'Restro',
-'version' : '16.0.1.0.1',
+'version' : '16.0.1.0.2',
 'category' : 'Restro',
 'depends' : ['base','mail'],
 'data' : ['security/ir.model.access.csv',
