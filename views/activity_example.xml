@@ -1,0 +1,66 @@
+<odoo>
+
+    <record id="view_activity_example" model="ir.ui.view">
+        <field name="name">example.activity</field>
+        <field name="model">activity.example</field>
+        <field name="arch" type="xml">
+            <activity string="Applicants">
+                <templates>
+                    <div t-name="activity-box">
+                        <div>
+                            <field name="name" />
+                        </div>
+                    </div>
+                </templates>
+            </activity>
+        </field>
+    </record>
+
+
+    <record id="view_activity_example_tree" model="ir.ui.view">
+        <field name="name">activity.example.tree</field>
+        <field name="model">activity.example</field>
+        <field name="priority">2</field>
+        <field name="arch" type="xml">
+            <tree string="Overtime records">
+                <field name="name"></field>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="view_activity_example_form" model="ir.ui.view">
+        <field name="name">activity.example.form</field>
+        <field name="model">activity.example</field>
+        <field name="arch" type="xml">
+            <form string="Study roadmap record">
+                <sheet>
+                    <group>
+                        <field name="name"></field>
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                    <field name="message_ids" widget="mail_thread"></field>
+                    <field name="activity_ids" widget="mail_activity"></field>
+                </div>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="action_activity_example" model="ir.actions.act_window">
+        <field name="name">Activity View</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">activity.example</field>
+        <field name="view_mode">activity,tree,form</field>
+      </record> 
+
+      
+      <menuitem id="activity_example_root"
+      name="Activity view"
+      sequence="10"
+      parent="menu_restro_main"
+      action = "action_activity_example" />
+
+
+</odoo>

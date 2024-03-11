@@ -1,0 +1,43 @@
+<odoo>
+    <record id="tree_visitor" model="ir.ui.view">
+        <field name="name" >tree.visitor</field>
+        <field name="model" >visitor.data</field>
+        <field name="arch" type="xml" >
+            <tree>
+                <field name="name" ></field>
+                <field name="surname" ></field>
+                <field name="mobile" ></field>
+                <field name="email" ></field>
+                <field name="restaurant_id" ></field>
+                <field name="tag_ids" widget="many2many_tags" ></field>
+                <field name="restaurant_mobile" ></field>
+                <field name="ordered_items" ></field>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_visitor_search" model="ir.ui.view">
+        <field name = "name">view.visitor.search</field>
+        <field name = "model">visitor.data</field>
+        <field name="arch" type="xml">
+            <search string="visitor">
+                <field name="name"/>
+                <field name="id"/>
+                <filter string="visitor Name" name="name"/>
+                <group expand="0" string="Group By">
+                    <filter string="visitor" name="restaurant" context="{'group_by': 'id'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="action_visitor" model="ir.actions.act_window">
+        <field name="name">visitor</field>
+        <field name="res_model">visitor.data</field>
+    </record>
+
+    <menuitem id="menu_visitor_main"
+        name="Visitors"
+        parent="menu_restro_main"
+        action = "action_visitor" />
+</odoo>

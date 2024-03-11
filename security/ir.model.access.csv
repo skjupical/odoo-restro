@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+restaurant_id,restaurant_data,restro.model_restaurant_data,,1,1,1,1
+visitor_id,visitor_data,restro.model_visitor_data,,1,1,1,1
+cuisine_id,cuisine_data,restro.model_cuisine_data,,1,1,1,1
+acc_restro.history,restro.history,restro.model_restro_history,,1,1,1,1
+activity_id,activity.example,restro.model_activity_example,,1,1,1,1
